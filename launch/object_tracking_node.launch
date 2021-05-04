@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="image_topic" default="/camera/color/image_raw"/>
+
+    <node name="object_tracking_node" pkg="object_tracking" type="object_tracking_node.py" output="screen">
+        <rosparam param="image_topics" subst_value="True">[$(arg image_topic)]</rosparam> 
+    </node>
+
+</launch>
